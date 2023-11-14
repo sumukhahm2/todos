@@ -1,0 +1,11 @@
+.me-auto{
+    width: 100%;  
+}
+.link{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+.link:hover{
+    color: white;
+}

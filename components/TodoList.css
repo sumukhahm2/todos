@@ -1,0 +1,83 @@
+.container-label {
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+ 
+  .container-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px ridge black;
+    border-radius: 50%;
+    background-color: #eee;
+  }
+  
+ 
+  .container-label:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  
+
+ 
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  
+  .container-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  
+  .container-label .checkmark:after {
+    left: 8px;
+    top: 2px;
+    width: 8px;
+    height: 15px;
+    border: solid rgb(5, 5, 5);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .delete-btn{
+    border: none;
+    background: none;
+   position: relative;
+   display: block;
+   margin-left: 800px;
+   margin-top: -30px;
+
+  }
+  .details{
+    margin-left: 50px;
+    width: 100%;
+  }
+  .todoname,.todo-description{
+    width: auto;
+  }
