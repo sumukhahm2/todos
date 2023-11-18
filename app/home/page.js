@@ -1,9 +1,16 @@
+'use client'
+
 const { Fragment } = require("react")
 import TodoList from "@/components/TodoList"
+import { useEffect } from "react"
 
 
 const TodoHome=()=>{
-    return(
+    useEffect(()=>{
+        console.log('hello')
+    },[])
+    
+    return( 
         <Fragment>
             <TodoList/>
         </Fragment>

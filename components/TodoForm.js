@@ -1,4 +1,5 @@
-'use client'
+
+
 import { Fragment,useRef} from "react"
 import { todoActions } from "./reduxstore/todoListSlice"
 import {Form,Row,Col,Button} from 'react-bootstrap'
@@ -7,7 +8,7 @@ const TodoForm=()=>{
     const dispatch=useDispatch()
    const todoInputRef=useRef()
    const todoDescriptionRef=useRef()
-    const todoFormSubmitHandler=(event)=>{
+    const todoFormSubmitHandler=async(event)=>{
       event.preventDefault()
       console.log('todos')
        const todos={
@@ -17,7 +18,17 @@ const TodoForm=()=>{
          completed:false
        }
        console.log(todos)
+       const response=await fetch('/api/post',{
+        method:'POST',
+        body:JSON.stringify(todos),
+        headers:{
+          "Content-Type": "application/json", 
+        }
+     })
+     const data=await response.json()
+     console.log(data)
       dispatch(todoActions.addTodos(todos))
+      
     }
     return(
         <Fragment>

@@ -9,17 +9,27 @@ const todoSlice=createSlice({
     initialState:defaultTodos,
     reducers:{
         addTodos(state,action){
+
        state.todoItems=[action.payload].concat(state.todoItems)
            console.log(state.todoItems)
         },
         completeTodo(state,action)
         {
-            const index=state.todoItems.findIndex((obj)=>obj.id===action.payload)
+           
+            const index=state.todoItems.findIndex((obj)=>obj._id===action.payload)
+            //console.log(index)
+            state.todoItems[index]={...state.todoItems[index],completed:true}   
+            state.todoItems=state.todoItems.filter((obj)=>obj._id!==action.payload)
             
-            state.todoItems[index]={...state.todoItems[index],completed:true}
-            
-            
-            
+        },
+        addTodo(state,action){
+            state.todoItems=[]
+           state.todoItems=state.todoItems.concat(action.payload)
+           console.log(action.payload)
+           
+        },
+        deleteTodo(state,action){
+        state.todoItems=state.todoItems.filter((obj)=>obj._id!==action.payload)
         }
     }
 })

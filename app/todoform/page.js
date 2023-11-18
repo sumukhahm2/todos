@@ -1,12 +1,12 @@
 
-
+'use client'
 
 import { Fragment } from "react"
 import TodoForm from "@/components/TodoForm"
 
 
 const AddTodo=()=>{
-
+   
     
     return(
         <Fragment>

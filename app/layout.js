@@ -3,8 +3,7 @@
 import HeaderNav from "@/components/HeaderNav"
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { useEffect } from "react";
-import { Provider } from "react-redux";
-import store from "@/components/reduxstore/reduxstore";
+import { Providers } from "@/components/reduxstore/Providers";
 import Head from "next/head";
 
 export default function RootLayout({ children }) {
@@ -22,9 +21,9 @@ export default function RootLayout({ children }) {
           
         </header>
         <main>
-          <Provider store={store}>
+          <Providers >
           {children}
-          </Provider>
+          </Providers>
         </main>
       </body>
     </html> 
